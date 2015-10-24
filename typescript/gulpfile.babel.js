@@ -12,7 +12,6 @@ gulp.task('build', ['clean'], ()=> {
     glob('src/**/**form.ts', function(err, files) {
         var tasks = files.map(function(entry) {
             let fileName = entry.substr(entry.lastIndexOf('/')+1).replace('.ts','.bundle.js');
-            console.log(`Processing ${fileName}`);
             return gulp.src([entry]) 
                 .pipe($.tsc({keepTree: false, out: fileName}))
                 .pipe(buffer())
@@ -23,7 +22,7 @@ gulp.task('build', ['clean'], ()=> {
             });
         return es.merge.apply(null, tasks);
     });
-    gulp.watch(['src/**/**form.ts'], ['build']);
+    gulp.watch(['src/**/*.ts'], ['build']);
 });
     
 // Clean output directory
