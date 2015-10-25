@@ -1,4 +1,4 @@
-namespace RYR {
+namespace Common {
 	export class Logger {
 		constructor() {
 			console.log('Logging ctor');

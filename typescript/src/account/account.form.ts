@@ -3,17 +3,17 @@
 namespace RYR {
 	export class AccountForm {
 		constructor(){
-			Logger.log('Account Form ctor');
+			Common.Logger.log('Account Form ctor');
 		}
 		
 		static onSave() : void {
-			Logger.log('Account Form onSave');
+			Common.Logger.log('Account Form onSave');
 		}
 		
 		static onLoad() : void {
 			let c = Xrm.Page.context.client;
-			Logger.log(`Script is executing in ${c.getClient()} context`);
-			Logger.log('Account Form onLoad');
+			Common.Logger.log(`Script is executing in ${c.getClient()} context`);
+			Common.Logger.log('Account Form onLoad');
 		}
 	}
 }
